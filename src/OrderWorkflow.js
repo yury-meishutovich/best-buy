@@ -1,8 +1,8 @@
 import React from 'react';
 import Order from './order/components/Order';
-import Confirmation from './confirmation/components/Confirmation'
-import Products from './products/components/Products'
-import viewConsts from './common/code/viewConsts'
+import Confirmation from './confirmation/components/Confirmation';
+import Products from './products/components/Products';
+import viewConsts from './common/code/viewConsts';
 
 
 
@@ -16,21 +16,20 @@ class OrderWorkflow extends React.Component {
     }      
    
   handleNavigate = (view, model)=> {    
-    this.setState({view: view, model: model})     
+      this.setState({ view: view, model: model });
   }
   
   render()  {         
 
-    const Views = {
-      Order : Order,
-      Confirmation : Confirmation,
-      Products : Products  
-    }
+      const Views = {
+          Order: Order,
+          Confirmation: Confirmation,
+          Products: Products
+      };
 
     
     const View = Views[this.state.view];   
-      return <View {...this.state.model}  navigate={this.state.navigate}/>
-
+      return <View {...this.state.model} navigate={this.state.navigate} />;
   }
 }
  

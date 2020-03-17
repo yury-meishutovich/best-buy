@@ -10,20 +10,18 @@ class List extends React.Component{
     this.props.onBuyNowClick(obj);
   }
 
-  render()  {        
-      return <div className="row">            
-                {this.props.data.map((item) =>  
-                  <div className="col-lg-3 col-md-6 mb-4" key={item.sku}>
-                    <Item buyNowClick = {this.handleBuyNowClick} itemInfo = {item} /> 
-                </div>)}
-             </div>  
-           
-  }
+    render() {
+        return (
+            <div className="row">  {
+                this.props.data.map((item) => <div className="col-lg-3 col-md-6 mb-4" key={item.sku}>    <Item buyNowClick={this.handleBuyNowClick} itemInfo={item} /> </div>)
+            }
+      </div>);
+    }
 }
 
-List.propTypes = {   
-  data : PropTypes.PropTypes.arrayOf(PropTypes.object).isRequired,
-  onBuyNowClick : PropTypes.func.isRequired
-}
+List.propTypes = {
+    data: PropTypes.PropTypes.arrayOf(PropTypes.object).isRequired,
+    onBuyNowClick: PropTypes.func.isRequired
+};
 
 export default List;

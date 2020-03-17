@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ItemInfo from '../../common/components/ItemInfo'
+import ItemInfo from '../../common/components/ItemInfo';
 
 class Item extends React.Component {
   
@@ -9,19 +9,18 @@ class Item extends React.Component {
   }
   
   render() {
-    return <div className="card">
+    return (<div className="card">
                 <ItemInfo {...this.props.itemInfo}/>
                 <div className="card-footer text-center">
                   <button className="btn btn-primary" onClick={this.handleBuyNowClick} >Buy Now</button>      
                 </div>
-            </div>;  
+            </div>);  
   }
 }
 
 Item.propTypes = {
-  itemInfo : PropTypes.object.isRequired,
-  buyNowClick : PropTypes.func.isRequired
-}
+    buyNowClick: PropTypes.func.isRequired    
+};
 
 
 export default Item;
